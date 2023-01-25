@@ -101,7 +101,7 @@ public class StudentRegister {
     private void printAttainments(ArrayList<Attainment> att) {
         
         System.out.println(this.students.get(att.get(0).getStudentNumber()).getName() + 
-                " (" + att.get(0).getStudentNumber()+ ")");
+                " (" + att.get(0).getStudentNumber()+ "):");
         
         for (Attainment at : att) {
             System.out.println("  " + at.getCourseCode() + " " + 
