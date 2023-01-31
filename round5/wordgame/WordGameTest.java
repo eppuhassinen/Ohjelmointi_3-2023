@@ -9,7 +9,7 @@ public class WordGameTest {
     String cmdFilename = args[1];
 
     WordGame game = new WordGame(wordFilename);
-    try(var cmdFile = new BufferedReader(new FileReader(cmdFilename))) {
+    try(BufferedReader cmdFile = new BufferedReader(new FileReader(cmdFilename))) {
       String cmd;
       while((cmd = cmdFile.readLine()) != null) {
         String[] parts = cmd.split("\\s+");
@@ -18,7 +18,7 @@ public class WordGameTest {
           switch(parts[0]) {
             case "init":
               System.out.format("Initializing a new game with %d and %d.%n",
-                      Integer.parseInt(parts[1]), Integer.parseInt(parts[2]));
+                      Integer.valueOf(parts[1]), Integer.parseInt(parts[2]));
               game.initGame(Integer.parseInt(parts[1]), Integer.parseInt(
                       parts[2]));
               break;
