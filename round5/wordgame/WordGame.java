@@ -101,6 +101,12 @@ public class WordGame {
         
     }
     
+    /**
+     *
+     * @param word
+     * @return
+     * @throws GameStateException
+     */
     public WordGameState guess(String word) throws GameStateException {
         if (!isActive) {
             throw new GameStateException("There is currently no active word game!");
@@ -121,7 +127,7 @@ public class WordGame {
     }
 
 
-public static class WordGameState {
+static class WordGameState {
     private String word;
     private String wordToGuess;
     private int mistakes;
