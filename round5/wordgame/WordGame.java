@@ -80,6 +80,8 @@ public class WordGame {
                     newWord += String.valueOf(c).toLowerCase();
                     gameState.missingChars--;
                     
+                    if (gameState.missingChars == 0) {isActive = false;}
+                    
                 }
                 else
                 {
