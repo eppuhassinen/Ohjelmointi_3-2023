@@ -28,7 +28,7 @@ public class WordGame {
     
     public void initGame(int wordIndex, int mistakeLimit) {
         gameState = new WordGameState();
-        gameState.wordToGuess = words.get(wordIndex);
+        gameState.wordToGuess = words.get(wordIndex % words.size());
         gameState.word = "_".repeat(gameState.wordToGuess.length());
         gameState.mistakes = 0;
         gameState.mistakeLimit = mistakeLimit;
