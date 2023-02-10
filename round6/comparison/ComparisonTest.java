@@ -15,7 +15,7 @@ public class ComparisonTest {
   
   public static void main(String[] args) throws IOException {
     String attainmentFN = args[0];
-    ArrayList<Attainment> attainments = new ArrayList<>();
+    ArrayList<Attainment> attainments = new ArrayList<Attainment>();
     try(var file = new BufferedReader(new FileReader(attainmentFN))) {
       String line;
       while((line = file.readLine()) != null) {
