@@ -19,7 +19,7 @@ public class Attainment implements Comparable<Attainment>{
         public int compare(Attainment a, Attainment b) {
         int cmp = a.getCourseCode().compareTo(b.getCourseCode());
         if (cmp == 0) {
-            cmp = Integer.compare(a.getGrade(), b.getGrade());
+            cmp = Integer.compare(b.getGrade(), a.getGrade());
         }
         return cmp;
         }
