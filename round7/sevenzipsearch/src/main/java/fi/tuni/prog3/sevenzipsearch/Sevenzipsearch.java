@@ -55,13 +55,13 @@ public class Sevenzipsearch {
             return null;
         }
         int i = 0;
-        String newLine = "";
+        String newLine = originalLine;
         while (lowLine.indexOf(word, i) >= 0) {
             int startI = lowLine.indexOf(word, i);
             
-            newLine = originalLine.substring(0, startI)
-                    + originalLine.substring(startI, startI + word.length()).toUpperCase()
-                    + originalLine.substring(startI + word.length());
+            newLine = newLine.substring(0, startI)
+                    + newLine.substring(startI, startI + word.length()).toUpperCase()
+                    + newLine.substring(startI + word.length());
             
             i = startI + word.length();
         }
