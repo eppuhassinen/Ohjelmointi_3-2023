@@ -12,7 +12,7 @@ import org.apache.commons.compress.archivers.sevenz.SevenZFile;
  *
  * @author Eppuh
  */
-public class SevenZipSearch {
+public class Sevenzipsearch {
 
     public static void main(String[] args) throws IOException {
         try (SevenZFile sevenZFile = new SevenZFile(new File(args[0]))){
