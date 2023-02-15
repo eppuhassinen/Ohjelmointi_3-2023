@@ -9,7 +9,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
-        <exec.mainClass>fi.tuni.prog3.sevenzipsearch.SevenZipSearch</exec.mainClass>
+        <exec.mainClass>fi.tuni.prog3.sevenzipsearch.Sevenzipsearch</exec.mainClass>
     </properties>
     <dependencies>
         <dependency>
@@ -32,7 +32,7 @@
         <executions>
           <execution>
             <configuration>
-              <mainClass>fi.tuni.prog3.sevenzipsearch.SevenZipSearch</mainClass>
+              <mainClass>fi.tuni.prog3.sevenzipsearch.Sevenzipsearch</mainClass>
               <onejarVersion>0.97</onejarVersion>
               <attachToBuild>true</attachToBuild>
             </configuration>
