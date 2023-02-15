@@ -48,15 +48,16 @@ public class Sevenzipsearch {
 
 
     static String findInLine(String originalLine, String word) {
-        originalLine = originalLine.toLowerCase();
+        
+        String lowLine = originalLine.toLowerCase();
         word = word.toLowerCase();
-        if (!originalLine.contains(word)) {
+        if (!lowLine.contains(word)) {
             return null;
         }
         int i = 0;
-        String newLine = originalLine;
-        while (originalLine.indexOf(word, i) >= 0) {
-            int startI = originalLine.indexOf(word, i);
+        String newLine = "";
+        while (lowLine.indexOf(word, i) >= 0) {
+            int startI = lowLine.indexOf(word, i);
             
             newLine = originalLine.substring(0, startI)
                     + originalLine.substring(startI, startI + word.length()).toUpperCase()
