@@ -5,6 +5,7 @@ package fi.tuni.prog3.json;
 public abstract class Node {
     /**
      * The only constructor.
+     * Will be invoked, usually implicitly, by subclass constructors.
      */
     protected Node() {
         
