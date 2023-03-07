@@ -112,7 +112,7 @@ public class ValueNode extends Node{
     /**
      * Returns the stored value as a string.
      * @return the stored string.
-     * @throws IllegalStateException if the stored value is not a boolean value.
+     * @throws IllegalStateException if the stored value is not a string.
      */
     public String getString(){
         if (!this.isString) {throw new IllegalStateException("No string stored");}
