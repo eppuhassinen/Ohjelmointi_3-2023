@@ -3,6 +3,12 @@ package fi.tuni.prog3.json;
  * An abstract super class for different types of JSON nodes.
  */
 public abstract class Node {
+    /**
+     * The only constructor.
+     */
+    protected Node() {
+        
+    }
   /**
    * Checks whether this node represents a JSON object.
    * @return true if this node represents a JSON object, otherwise false.
