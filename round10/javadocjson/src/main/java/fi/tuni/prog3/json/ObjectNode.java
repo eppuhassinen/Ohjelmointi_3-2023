@@ -19,6 +19,14 @@ public class ObjectNode extends Node implements Iterable<String>{
     public ObjectNode() {
         pairs = new TreeMap<>();
     }
+        /**
+     * Returns the number of JSON nodes stored under this JSON object.
+     * @return the number of JSON nodes under this JSON object.
+     */
+    int size() {
+        return pairs.size();
+    }
+    
     
     /**
      * Returns the JSON node stored under the given name.
@@ -38,15 +46,7 @@ public class ObjectNode extends Node implements Iterable<String>{
         pairs.put(name, node);
     }
     
-    /**
-     * Returns the number of JSON nodes stored under this JSON object.
-     * @return the number of JSON nodes under this JSON object.
-     */
-    int size() {
-        return pairs.size();
-    }
-    
-    
+
     
     /**
      * Returns a String iterator that iterates the names of the name-node pairs stored in this JSON object in natural String order.

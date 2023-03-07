@@ -14,6 +14,13 @@ public class ArrayNode extends Node implements Iterable<Node>{
      */
     public ArrayNode() {
         nodes = new ArrayList<>();
+    }    
+    /**
+     * Returns the number of JSON nodes stored in this JSON array.
+     * @return the number of JSON nodes in this JSON array.
+     */
+    public int size() {
+        return nodes.size();
     }
     /**
      * Adds a new JSON node to the end of this JSON array.
@@ -22,14 +29,7 @@ public class ArrayNode extends Node implements Iterable<Node>{
     public void add(Node node) {
         nodes.add(node);
     }
-    
-    /**
-     * Returns the number of JSON nodes stored in this JSON array.
-     * @return the number of JSON nodes in this JSON array.
-     */
-    public int size() {
-        return nodes.size();
-    }
+
 
     /**
      * Returns a Node iterator that iterates the JSON nodes stored in this JSON array.

@@ -15,6 +15,13 @@ public class ValueNode extends Node{
     private boolean isNull = false;
 
     /**
+    * Constructs a JSON value node that stores the null value.
+    */
+    public ValueNode() {
+        isNull = true;
+    }
+    
+    /**
      * Constructs a JSON value node that stores the given double value.
      * @param value The double value to store in the new JSON value node.
      */
@@ -22,7 +29,14 @@ public class ValueNode extends Node{
         this.number = value;
         isDouble = true;
     }
-    
+    /**
+     * Constructs a JSON value node that stores the given boolean value.
+     * @param value The boolean value to store in the new JSON value node.
+     */
+    public ValueNode(boolean value) {
+        this.flag = value;
+        isBoolean = true;
+    }
     /**
      * Constructs a JSON value node that stores the given string.
      * @param value The string to store in the new JSON value node.
@@ -36,21 +50,9 @@ public class ValueNode extends Node{
         isString = true;
     }
 
-    /**
-     * Constructs a JSON value node that stores the given boolean value.
-     * @param value The boolean value to store in the new JSON value node.
-     */
-    public ValueNode(boolean value) {
-        this.flag = value;
-        isBoolean = true;
-    }
+    
 
-    /**
-     * Constructs a JSON value node that stores the null value.
-     */
-    public ValueNode() {
-        isNull = true;
-    }
+
     
     /**
      * Checks whether this value node stores a number (double).
@@ -60,6 +62,13 @@ public class ValueNode extends Node{
         return this.isDouble;
     }
     /**
+     * Checks whether this value node stores a boolean value.
+     * @return true if this node stores a boolean value, otherwise false.
+     */
+    public Boolean isBoolean(){
+        return this.isBoolean;
+    }
+    /**
      * Checks whether this value node stores a string.
      * @return true if this node stores a string, otherwise false.
      */
@@ -67,13 +76,6 @@ public class ValueNode extends Node{
         return this.isString;
     }
     
-    /**
-     * Checks whether this value node stores a boolean value.
-     * @return true if this node stores a boolean value, otherwise false.
-     */
-    public Boolean isBoolean(){
-        return this.isBoolean;
-    }
     
     /**
      * Checks whether this value node stores null.
@@ -91,6 +93,17 @@ public class ValueNode extends Node{
     public double getNumber() {
         return number;
     }
+     /**
+     * Returns the stored value as a boolean value.
+     * @return the stored boolean value.
+     * @throws IllegalStateException if the stored value is not a boolean value.
+     */
+    public boolean getBoolean() throws IllegalStateException{
+        if (!this.isBoolean){
+            throw new IllegalStateException("No boolean stored");
+        }
+        return flag;
+    }
 
     /**
      * Returns the stored value as a string.
@@ -102,17 +115,7 @@ public class ValueNode extends Node{
         return word;
     }
 
-    /**
-     * Returns the stored value as a boolean value.
-     * @return the stored boolean value.
-     * @throws IllegalStateException if the stored value is not a boolean value.
-     */
-    public boolean getBoolean() throws IllegalStateException{
-        if (!this.isBoolean){
-            throw new IllegalStateException("No boolean stored");
-        }
-        return flag;
-    }
+   
 
     /**
      * Returns the stored value as null.
