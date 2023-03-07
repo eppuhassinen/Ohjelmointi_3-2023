@@ -2,7 +2,7 @@
 package fi.tuni.prog3.json;
 
 /**
- * A class for representing a JSON value.
+ * A class for representing a JSON value. The value can be either a double, a boolean, a String or null.
  */
 public class ValueNode extends Node{
     private double number;
@@ -42,7 +42,7 @@ public class ValueNode extends Node{
      * @param value The string to store in the new JSON value node.
      * @throws IllegalStateException if the parameter value is null.
      */
-    public ValueNode(String value) throws IllegalStateException {
+    public ValueNode(String value){
         if (value == null) {
             throw new IllegalStateException("Null value!");
         }
@@ -98,7 +98,7 @@ public class ValueNode extends Node{
      * @return the stored boolean value.
      * @throws IllegalStateException if the stored value is not a boolean value.
      */
-    public boolean getBoolean() throws IllegalStateException{
+    public boolean getBoolean(){
         if (!this.isBoolean){
             throw new IllegalStateException("No boolean stored");
         }
@@ -110,7 +110,7 @@ public class ValueNode extends Node{
      * @return the stored string.
      * @throws IllegalStateException if the stored value is not a boolean value.
      */
-    public String getString() throws IllegalStateException {
+    public String getString(){
         if (!this.isString) {throw new IllegalStateException("No string stored");}
         return word;
     }
@@ -122,7 +122,7 @@ public class ValueNode extends Node{
      * @return null.
      * @throws IllegalStateException if the stored value is not null.
      */
-    public Object getNull() throws IllegalStateException {
+    public Object getNull(){
         if (!this.isNull){
             throw new IllegalStateException("No null value stored");
         }
