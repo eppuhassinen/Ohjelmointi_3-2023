@@ -89,8 +89,12 @@ public class ValueNode extends Node{
 /**
  * Returns the stored value as a number (double).
  * @return the stored number as a double value.
+ * @throws IllegalStateException if the stored value is not a number.
  */
     public double getNumber() {
+        if (!this.isDouble){
+            throw new IllegalStateException("No number stored");
+        }
         return number;
     }
      /**
